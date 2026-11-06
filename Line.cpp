@@ -28,3 +28,12 @@ Line::~Line(){
     delete _start;
     delete _end;
 }
+
+void Line::setStart(Point* p){
+    if (p != nullptr)
+        _start = p;
+}
+void Line::setEnd(Point* p){
+    if (p != nullptr)
+        _end = p;
+}

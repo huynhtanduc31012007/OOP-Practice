@@ -12,7 +12,10 @@ public:
     Rectangle(Point *A, Point *B);
     Rectangle(const Rectangle & other);
     ~Rectangle();
-    
+    void setTopLeft(Point*);
+    void setBottomRight(Point*);
+    Point getTopLeft(){return *_topLeft;}
+    Point getBottomRight(){ return *_bottomRight;}
 };
 
 

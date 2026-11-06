@@ -14,6 +14,15 @@ public:
     Line(Point*, Point*);
     Line(const Line&);
     ~Line();
+    void setStart(Point*);
+    void setEnd(Point*);
+    Point getStart(){
+        return *_start;
+    }
+    Point getEnd(){
+        return *_end;
+    }
+
 };
 
 #endif

@@ -25,3 +25,11 @@ Rectangle::~Rectangle(){
     delete _topLeft;
     delete _bottomRight;
 }
+void Rectangle::setTopLeft(Point* p){
+    if (p != nullptr)
+        _topLeft = p;
+}
+void Rectangle::setBottomRight(Point* p){
+    if (p != nullptr)
+        _bottomRight  = p;
+}

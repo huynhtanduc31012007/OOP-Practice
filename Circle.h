@@ -1,7 +1,7 @@
 #ifndef Circle_h
 #define Circle_h
 #include "Point.h"
-
+#include <iostream>
 class Circle {
 public:
     const float PI = 3.14f;
@@ -27,5 +27,7 @@ public:
 public:
     Circle();
     ~Circle();
+
 };
+
 #endif // Circle_h
