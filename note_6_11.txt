@@ -1,6 +1,0 @@
-Line: In ra do dai 
-Rectangle: Dien tich, chu vi 
-Arr: Kich thuoc, so luong phan tu 
-
-Thay Point* bang Point& 
- 
