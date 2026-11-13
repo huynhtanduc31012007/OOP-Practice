@@ -145,6 +145,8 @@ Rectangle* Rectangle::Parse(std::string line){
     std::vector<double> numbers;
     for (auto token : tokens)
       numbers.push_back(stof(token));
+    if (numbers.size() < 4)
+      return nullptr;
     Point* topLeft = new Point(numbers[0], numbers[1]);
     Point* bottomRight = new Point(numbers[2], numbers[3]);
     return new Rectangle(topLeft, bottomRight);

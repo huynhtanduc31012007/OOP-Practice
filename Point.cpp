@@ -1,4 +1,5 @@
 #include "Point.h"
+#include "Tokenizer.h"
 #include <cmath>
 #include <iostream>
 #include <string>
@@ -55,3 +56,14 @@ std::ostream &operator<<(std::ostream &os, const Point &p) {
   os << p.ToString();
   return os;
 }
+
+Point* Point::Parse(std::string line) {
+  std::vector<std::string> tokens = Tokenizer::Parse(line);
+  std::vector<float> numbers;
+  for (auto token : tokens)
+    numbers.push_back(std::stof(token));
+  if (numbers.size() < 2)
+    return nullptr;
+  return new Point(numbers[0], numbers[1]);
+}
+

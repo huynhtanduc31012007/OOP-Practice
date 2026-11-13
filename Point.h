@@ -29,6 +29,8 @@ public:
   float CalcDistanceTo(const Point *other) const;
   std::string ToString() const;
 
+  static Point* Parse(std::string);
+
   friend std::istream &operator>>(std::istream &is, Point &p);
   friend std::ostream &operator<<(std::ostream &os, const Point &p);
 };

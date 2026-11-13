@@ -123,18 +123,15 @@ std::ostream &operator<<(std::ostream &os, const DynamicArray &arr) {
 }
 
 
-DynamicArray* DynamicArray:: Parse(std::string line){
+DynamicArray* DynamicArray::Parse(std::string line) {
   std::vector<std::string> tokens = Tokenizer::Parse(line);
   std::vector<int> numbers;
   for (auto token : tokens)
     numbers.push_back(stoi(token));
   int n = numbers.size();
-  int* m_data = new int[n];
-  for (int i = 0; i < n; i++)
-    m_data[i] = numbers[i];
   DynamicArray *res = new DynamicArray();
   res->setSize(n);
   for (int i = 0; i < n; i++)
     res->m_data[i] = numbers[i];
-  return res;     
+  return res;
 }
