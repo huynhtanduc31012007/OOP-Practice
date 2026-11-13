@@ -32,6 +32,8 @@ public:
 
   friend std::istream &operator>>(std::istream &is, Rectangle &r);
   friend std::ostream &operator<<(std::ostream &os, const Rectangle &r);
+  static Rectangle* Parse(std::string);
+  
 };
 
 #endif

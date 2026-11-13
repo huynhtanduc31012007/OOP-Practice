@@ -24,6 +24,7 @@ public:
 
   friend std::istream &operator>>(std::istream &is, DynamicArray &arr);
   friend std::ostream &operator<<(std::ostream &os, const DynamicArray &arr);
+  static DynamicArray* Parse(std::string);
 };
 
 #endif // DynamicArray_h

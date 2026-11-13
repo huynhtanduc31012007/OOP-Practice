@@ -105,3 +105,14 @@ std::ostream &operator<<(std::ostream &os, const Line &L) {
   os << L.ToString();
   return os;
 }
+
+
+Line* Line::Parse(std::string line){
+    std::vector<std::string> tokens = Tokenizer::Parse(line);
+    std::vector<double> numbers;
+    for (auto token : tokens)
+      numbers.push_back(stof(token));
+    Point* start = new Point(numbers[0], numbers[1]);
+    Point* end = new Point(numbers[2], numbers[3]);
+    return new Line(start, end);
+}

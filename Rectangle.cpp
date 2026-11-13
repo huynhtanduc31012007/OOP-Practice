@@ -3,6 +3,7 @@
 #include <iostream>
 #include <limits>
 #include <string>
+#include "Tokenizer.h"
 
 int Rectangle::InstanceCount = 0;
 
@@ -137,4 +138,14 @@ std::istream &operator>>(std::istream &is, Rectangle &r) {
 std::ostream &operator<<(std::ostream &os, const Rectangle &r) {
   os << r.ToString();
   return os;
+}
+
+Rectangle* Rectangle::Parse(std::string line){
+    std::vector<std::string> tokens = Tokenizer::Parse(line);
+    std::vector<double> numbers;
+    for (auto token : tokens)
+      numbers.push_back(stof(token));
+    Point* topLeft = new Point(numbers[0], numbers[1]);
+    Point* bottomRight = new Point(numbers[2], numbers[3]);
+    return new Rectangle(topLeft, bottomRight);
 }
